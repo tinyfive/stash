@@ -10,7 +10,7 @@
     },
 
     "browser_action": {
-        "default_icon": "assets/images/icon.png",
+        "default_icon": "assets/images/stash@14x19.png",
         "default_title": "Stash this web page",
         "default_popup": "popup.html"
     },
