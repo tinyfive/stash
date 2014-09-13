@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Page Stash",
+    "description": "This extension help you stash current web page for a while",
+    "version": "0.9",
+
+    "background": {
+        "page": "background.html",
+        "persistent": false
+    },
+
+    "browser_action": {
+        "default_icon": "assets/images/icon.png",
+        "default_title": "Stash this web page",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "tabs"
+        // "http://code.jquery.com/*.js"
+    ]
+}
