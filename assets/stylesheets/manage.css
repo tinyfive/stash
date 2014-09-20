@@ -1,0 +1,30 @@
+.container {
+  width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.container .pages .item {
+  text-decoration: none;
+}
+.container .pages .favicon {
+  width: 1em;
+  height: 1em;
+}
+.container .pages .content {
+  margin-left: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 480px;
+}
+.container .pages .icon.btn-remove {
+  display: none;
+  cursor: pointer;
+}
+.container .pages .item:hover .icon.btn-remove {
+  display: block;
+}
+
+/*# sourceMappingURL=manage.css.map */

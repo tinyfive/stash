@@ -195,3 +195,7 @@ Capfile
 .powenv
 
 config/unicorn.rb.tower.dev
+
+# bower and Grunt
+bower_components
+node_modules

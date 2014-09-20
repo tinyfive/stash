@@ -1,28 +1,40 @@
-$(function() {
-    var pages = localStorage['stash_it'],
-        tableEl = $('.table-pages');
+(function() {
+  var render;
 
-    if (!pages) {
-        // TODO : handle empty
-        tableEl.replaceWith('<p>No Pages!</p>');
-        return
-    }
-
-    pages = JSON.parse(pages);
-
-    var html = '';
-
-    $.each(pages, function(idx, page) {
-        // TODO : use a template engine is better
-        html += '<tr><td><a href="' + page.url + '">' + page.title + '</a></td></tr>';
-    });
-
-    tableEl.html(html);
-
+  $(function() {
+    stash.init();
+    render();
     $('#btn-clear').click(function() {
-        if (window.confirm('确定要清空暂存的页面吗?')) {
-            localStorage.removeItem('stash_it');
-            location.reload();
-        }
+      return stash.clear();
     });
-});
+    return $(document).on('click', '.btn-remove', function(e) {
+      var btn, page, timestamp;
+      e.preventDefault();
+      btn = $(this);
+      page = btn.closest('.item');
+      timestamp = page.data('timestamp');
+      stash.remove(timestamp);
+      return page.fadeOut(function() {
+        return page.remove();
+      });
+    });
+  });
+
+  render = function() {
+    var html, page, pages, pagesEl, tpl, _i, _len;
+    pages = stash.pages;
+    pagesEl = $('#pages');
+    if (!pages.length) {
+      pagesEl.replaceWith('<p>No Pages!</p>');
+      return;
+    }
+    tpl = $('#tpl-page-item').html();
+    html = '';
+    for (_i = 0, _len = pages.length; _i < _len; _i++) {
+      page = pages[_i];
+      html += Mark.up(tpl, page);
+    }
+    return pagesEl.html(html);
+  };
+
+}).call(this);

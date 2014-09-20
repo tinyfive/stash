@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8" />
     <title></title>
+    <link href="assets/stylesheets/app.css" rel="stylesheet" />
+    <link href="assets/stylesheets/semantic.css" rel="stylesheet" />
+    <link href="assets/stylesheets/manage.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Stashed Pages</h1>
-    <table cellspacing="0" class="table-pages">
-    </table>
+    <div class="container">
+        <h1 class="ui header large">Stashed Pages</h1>
+        <div class="ui list animated pages" id="pages">
 
-    <button type="button" id="btn-clear">清空</button>
+        </div>
 
+        <div class="ui button red" id="btn-clear">Clear All</div>
+    </div>
+
+    <script id="tpl-page-item" type="text/template">
+        <div class="item" data-timestamp="{{ timestamp }}">
+            <i class="icon remove floated right btn-remove"></i>
+            <div class="ui image">
+                <img class="favicon" src="{{ favicon }}" />
+            </div>
+            <div class="content">
+                <a href="{{ url }}">{{ title }}</a>
+            </div>
+        </div>
+    </script>
     <script src="assets/javascripts/jquery-2.1.1.min.js"></script>
+    <script src="assets/javascripts/markup.min.js"></script>
+    <script src="assets/javascripts/stash.js"></script>
     <script src="assets/javascripts/manage.js"></script>
 </body>
 </html>
+    <script id="tpl-page-item" type="text/template">

@@ -1,0 +1,21 @@
+{
+  "name": "stash",
+  "version": "1.0.0",
+  "author": "Keeper <wls860801@gmail.com>",
+  "description": "chrome extension for stashing pages",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tinyfive/stash.git"
+  },
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/tinyfive/stash/issues"
+  },
+  "homepage": "https://github.com/tinyfive/stash",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.11.1"
+  }
+}

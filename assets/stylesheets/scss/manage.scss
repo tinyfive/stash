@@ -1,0 +1,37 @@
+@import 'bourbon/bourbon';
+
+.container {
+  width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  .pages {
+    .item {
+      text-decoration: none;
+    }
+
+    .favicon {
+      width: 1em;
+      height: 1em;
+    }
+
+    .content {
+      margin-left: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 480px;
+    }
+
+    .icon.btn-remove {
+      display: none;
+      cursor: pointer;
+    }
+
+    .item:hover .icon.btn-remove {
+      display: block;
+    }
+  }
+}
