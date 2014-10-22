@@ -1,6 +1,9 @@
 $ ->
   $('#btn-stash').click ->
-    chrome.tabs.query {active: true}, (tab) ->
+    chrome.tabs.query
+      active: true
+      currentWindow: true
+    , (tab) ->
       if $.isArray(tab)
         tab = tab[0]
 

@@ -2,7 +2,8 @@
   $(function() {
     $('#btn-stash').click(function() {
       return chrome.tabs.query({
-        active: true
+        active: true,
+        currentWindow: true
       }, function(tab) {
         var win;
         if ($.isArray(tab)) {
