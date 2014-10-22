@@ -5,6 +5,8 @@ window.stash =
     @pages = JSON.parse @localStorage['stash_it']
 
   save: ->
+    chrome.browserAction.setBadgeText
+      text: @pages.length.toString()
     @localStorage['stash_it'] = JSON.stringify @pages
 
   add: (page) ->

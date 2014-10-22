@@ -6,6 +6,9 @@
       return this.pages = JSON.parse(this.localStorage['stash_it']);
     },
     save: function() {
+      chrome.browserAction.setBadgeText({
+        text: this.pages.length.toString()
+      });
       return this.localStorage['stash_it'] = JSON.stringify(this.pages);
     },
     add: function(page) {
